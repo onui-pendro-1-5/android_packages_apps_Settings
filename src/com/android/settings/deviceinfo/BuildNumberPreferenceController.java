@@ -88,8 +88,8 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
                 StringBuilder sb = new StringBuilder();
                 sb.append(BidiFormatter.getInstance().unicodeWrap(
                         TextUtils.isEmpty(Build.VENDOR.BUILD_NUMBER_OVERRIDE) ? Build.DISPLAY : Build.VENDOR.BUILD_NUMBER_OVERRIDE));
-                String pixelExperienceVersion = getPixelExperienceVersion();
-                if (!pixelExperienceVersion.equals("")){
+                String OnUIPendroVersion = getOnUIPendroVersion();
+                if (!OnUIPendroVersion.equals("")){
                     sb.append("\n");
                     sb.append(pixelExperienceVersion);
                 }
@@ -101,10 +101,10 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
         }
     }
 
-    private String getPixelExperienceVersion(){
-        String buildDate = SystemProperties.get("org.pixelexperience.build_date","");
-        String buildType = SystemProperties.get("org.pixelexperience.build_type","unofficial").toUpperCase();
-        return buildDate.equals("") ? "" : "PixelExperience-" + buildDate + "-" + buildType;
+    private String getOnUIPendroVersion(){
+        String buildDate = SystemProperties.get("org.onui-pendro.build_date","");
+        String buildType = SystemProperties.get("org.onui-pendro.releasetype","unofficial").toUpperCase();
+        return buildDate.equals("") ? "" : "OnUI-Pendro-1.5-" + buildDate + "-" + buildType;
     }
 
     @Override
