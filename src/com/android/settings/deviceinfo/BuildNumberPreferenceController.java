@@ -91,7 +91,7 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
                 String OnUIPendroVersion = getOnUIPendroVersion();
                 if (!OnUIPendroVersion.equals("")){
                     sb.append("\n");
-                    sb.append(pixelExperienceVersion);
+                    sb.append(OnUIPendroVersion);
                 }
                 preference.setSummary(sb.toString());
                 preference.setEnabled(true);
